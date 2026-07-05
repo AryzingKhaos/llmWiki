@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p /tmp/nvshengmima)",
+      "Read(//private/tmp/nvshengmima/**)",
+      "Bash(python3 *)",
+      "Bash(mdls -name kMDItemNumberOfPages \"/Users/aaron/Documents/llmWikis/investWiki/raw/大道：段永平投资问答录.pdf\")",
+      "Bash(pdfinfo \"/Users/aaron/Documents/llmWikis/investWiki/raw/大道：段永平投资问答录.pdf\")",
+      "Bash(pdftotext -v)",
+      "Bash(mkdir -p /tmp/dadao_extract)",
+      "Bash(pdftotext -layout \"/Users/aaron/Documents/llmWikis/investWiki/raw/大道：段永平投资问答录.pdf\" /tmp/dadao_extract/full.txt)"
+    ]
+  }
+}

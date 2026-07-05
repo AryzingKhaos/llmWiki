@@ -1,0 +1,7 @@
+# Wiki content directories (all *Wiki) — excluded from version control
+*Wiki/
+
+# macOS
+.DS_Store
+
+.obsidian
