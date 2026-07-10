@@ -26,7 +26,7 @@
 
 1. 先识别问题对应的 library 和主题范围。
 2. 默认从 `[libraryName]/wiki/` 中检索答案。入口优先读 `index.md` 顶部的 `## 主题索引` 定位相关主题行，再跳转对应条目，不必逐条通读全部 index 条目。
-3. 优先读取以下目录中的页面：`[libraryName]/wiki/sources/`、`[libraryName]/wiki/fragment/`。如果查询时发现某个`wiki/sources/`下的wiki文件的某部分内容符合，就需要到对应的raw文件的对应章节中去查看原文，可以根据原文做详细解答
+3. 优先读取以下目录中的页面，顺序为：`[libraryName]/wiki/concepts/`、`[libraryName]/wiki/sources/`、`[libraryName]/wiki/fragment/`。概念层入口是 `concepts/index.md` 的 `## 概念清单`：问题命中某个概念（尤其是模型类）时，概念页是最佳起点——它已经汇总了各来源的论述与分歧，可沿其 `## 库内文献` 链接下钻到 sources。如果查询时发现某个`wiki/sources/`下的wiki文件的某部分内容符合，就需要到对应的raw文件的对应章节中去查看原文，可以根据原文做详细解答
 4. 对于  `[libraryName]/wiki/query/` 下的内容，不要做参考
 5. 先定位最相关的 wiki 页面。
 6. 再沿交叉链接继续读取相关页面。

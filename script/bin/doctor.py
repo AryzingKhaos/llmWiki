@@ -14,6 +14,7 @@
   [W] 摘要超长：index.md 简短摘要 >100 字（违反 ingest 索引规范 2026-07-03 修订版）
   [W] 索引污染：index.md 中残留 check_uningest 的待入库清单（`ingest xxx "..."` 行）
   [W] 缺 Source Path：wiki/sources/*.md 中无 `Source Path:` 字段
+  [W] 孤儿页：wiki/sources|concepts/*.md 除索引文件外无任何入链（Karpathy lint 的 orphan pages）
 
 退出码：有 [E] 级问题时为 1，否则 0。
 """
@@ -165,11 +166,30 @@ def check_library(lib_dir):
         check_links_in_file(lib, f, f.parent)
 
     # 其余 wiki 子目录只做死链/锚点检查
-    for sub in ("fragment", "query", "practice"):
+    for sub in ("fragment", "query", "practice", "concepts"):
         d = wiki / sub
         if d.is_dir():
             for f in sorted(d.glob("*.md")):
                 check_links_in_file(lib, f, f.parent)
+
+    # --- 孤儿页检查：sources/concepts 页除索引文件外无任何入链 ---
+    inbound = set()
+    for f in wiki.rglob("*.md"):
+        if f.name == "index.md":  # wiki/index.md 与 concepts/index.md 均为索引，不算入链
+            continue
+        for _, line in iter_md_lines(f):
+            for file_part, _ in extract_links(line):
+                t = (f.parent / file_part).resolve()
+                if t.exists() and t != f.resolve():
+                    inbound.add(t)
+    for sub in ("sources", "concepts"):
+        d = wiki / sub
+        if d.is_dir():
+            for f in sorted(d.glob("*.md")):
+                if f.name == "index.md":
+                    continue
+                if f.resolve() not in inbound:
+                    add("W", lib, f"孤儿页 {sub}/{f.name}：除索引外无任何入链")
 
     # --- 概览统计 ---
     n_raw = sum(1 for p in raw.rglob("*") if p.is_file()) if raw.is_dir() else 0

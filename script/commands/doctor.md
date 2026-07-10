@@ -27,6 +27,7 @@ python3 script/bin/doctor.py [libraryName]
 | W | `index.md` 简短摘要超过 100 字 | ingest Index 格式说明（2026-07-03 修订：一律 ≤100 字） |
 | W | `index.md` 残留 `ingest xxx "..."` 待入库清单行（索引污染） | — |
 | W | `wiki/sources/*.md` 缺 `Source Path:` 字段 | ingest 执行要求 7 |
+| W | 孤儿页：`wiki/sources|concepts/*.md` 除索引文件外无任何入链 | Karpathy lint（orphan pages） |
 
 执行要求：
 

@@ -44,6 +44,7 @@ Wiki 管理员（Wiki Administrator）
 8. `probe`
 9. `podcast`
 10. `doctor`
+11. `concept`
 
 以下功能仅为预留，当前不实现：
 
@@ -67,8 +68,9 @@ Wiki 管理员（Wiki Administrator）
 - `script/commands/probe.md`
 - `script/commands/podcast.md`
 - `script/commands/doctor.md`
+- `script/commands/concept.md`
 
-执行 `ingest`、`learn`、`query`、`lint`、`batch_lint`、`probe`、`podcast`、`doctor` 时：
+执行 `ingest`、`learn`、`query`、`lint`、`batch_lint`、`probe`、`podcast`、`doctor`、`concept` 时：
 
 - 必须先读取对应的 `script/commands/*.md`
 - 必须严格按对应文件执行
