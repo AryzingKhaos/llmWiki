@@ -26,13 +26,13 @@
 
 1. 先识别问题对应的 library 和主题范围。
 2. 默认从 `[libraryName]/wiki/` 中检索答案。入口优先读 `index.md` 顶部的 `## 主题索引` 定位相关主题行，再跳转对应条目，不必逐条通读全部 index 条目。
-3. 优先读取以下目录中的页面，顺序为：`[libraryName]/wiki/concepts/`、`[libraryName]/wiki/sources/`、`[libraryName]/wiki/fragment/`。概念层入口是 `concepts/index.md` 的 `## 概念清单`：问题命中某个概念（尤其是模型类）时，概念页是最佳起点——它已经汇总了各来源的论述与分歧，可沿其 `## 库内文献` 链接下钻到 sources。如果查询时发现某个`wiki/sources/`下的wiki文件的某部分内容符合，就需要到对应的raw文件的对应章节中去查看原文，可以根据原文做详细解答
+3. 优先读取以下目录中的页面，顺序为：`[libraryName]/wiki/concepts/`、`[libraryName]/wiki/sources/`、`[libraryName]/wiki/fragment/`。概念层入口是 `concepts/index.md` 的 `## 概念清单`：问题命中某个概念（尤其是模型类）时，概念页是最佳起点——它已经汇总了各来源的论述与分歧，可沿其 `## 库内文献` 链接下钻到 sources。如果查询时发现某个`wiki/sources/`下的wiki文件的某部分内容符合，就需要到对应的raw文件的对应章节中去查看原文，可以根据原文做详细解答。回查原文时，如果原始文件是扫描版/图片版、且同目录存在对应的 `<原文件名去扩展名>.ocr.md`（OCR 成品，见 `ingest.md` 执行要求 16），应直接读取该 `.ocr.md` 作为原文，不必重新解析扫描件
 4. 对于  `[libraryName]/wiki/query/` 下的内容，不要做参考
 5. 先定位最相关的 wiki 页面。
 6. 再沿交叉链接继续读取相关页面。
 7. 综合多个 wiki 页面生成结构化回答。
 8. 回答时优先引用 wiki 中已经存在的稳定知识。
-9. 如果 wiki 中确实不足以回答问题，可以阅读 wiki 中对应的  raw 内容，用更详细的内容解答问题。
+9. 如果 wiki 中确实不足以回答问题，可以阅读 wiki 中对应的  raw 内容，用更详细的内容解答问题。扫描版原文同样优先读同目录的 `.ocr.md`。
 10. 如果发现知识缺失，必须明确提出：`需要创建新 Wiki 页面（New Wiki Page Needed）`
 11. 如果 query 过程中需要补充或建议新增 wiki 内容，相关内容必须使用简体中文。
 12. 如果询问的问题，整个 wiki 都没有直接答案，可以去互联网搜索问题的相关内容。但是分析问题使用的方法论必须是 wiki 内的。
