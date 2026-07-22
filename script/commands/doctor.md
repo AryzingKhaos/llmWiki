@@ -19,7 +19,7 @@ python3 script/bin/doctor.py [libraryName]
 
 | 级别 | 检查 | 对应规范来源 |
 |---|---|---|
-| E | 库缺 `wiki/` 目录或 `wiki/index.md` | AGENT.md 仓库结构 |
+| E | 库缺 `wiki/` 目录或 `wiki/index.md` | AGENTS.md/CLAUDE.md 仓库结构 |
 | E | `index.md` 与 `wiki/**/*.md` 中相对 md 链接目标文件不存在（死链） | lint |
 | E | `wiki/sources/*.md` 各级标题内容含空格/Tab/全角空格 | ingest 硬性约束 |
 | W | 链接 `#锚点` 在目标文件中找不到对应二级标题（宽容归一匹配后仍不中） | lint 锚点规范 |
