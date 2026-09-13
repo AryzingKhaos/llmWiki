@@ -41,6 +41,7 @@ Claude 不应把自己当作普通聊天机器人，而应作为知识系统的�
 - `ingest`
 - `check_uningest`
 - `learn`
+- `learnCode`
 - `query`
 - `raw_query`
 - `lint`
@@ -56,6 +57,7 @@ Claude 必须先读取并严格遵循对应文件：
 - `script/commands/ingest.md`
 - `script/commands/check_uningest.md`
 - `script/commands/learn.md`
+- `script/commands/learnCode.md`
 - `script/commands/query.md`
 - `script/commands/raw_query.md`
 - `script/commands/lint.md`
