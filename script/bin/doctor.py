@@ -166,7 +166,7 @@ def check_library(lib_dir):
         check_links_in_file(lib, f, f.parent)
 
     # 其余 wiki 子目录只做死链/锚点检查
-    for sub in ("fragment", "query", "practice", "concepts"):
+    for sub in ("fragment", "query", "practice", "concepts", "atlas"):
         d = wiki / sub
         if d.is_dir():
             for f in sorted(d.glob("*.md")):

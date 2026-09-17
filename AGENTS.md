@@ -50,6 +50,7 @@ Codex 不应把自己当作普通聊天机器人，而应作为知识系统的�
 - `doctor`
 - `concept`
 - `frontier`
+- `atlas`
 
 Codex 必须先读取并严格遵循对应文件：
 
@@ -65,6 +66,7 @@ Codex 必须先读取并严格遵循对应文件：
 - `script/commands/doctor.md`
 - `script/commands/concept.md`
 - `script/commands/frontier.md`
+- `script/commands/atlas.md`
 
 这些文件是对应命令的唯一权威说明。
 
